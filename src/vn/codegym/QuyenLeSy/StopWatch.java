@@ -1,13 +1,24 @@
 package vn.codegym.QuyenLeSy;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class StopWatch {
-    private Date startTime = new Date();
-    private Date endTime = new Date();
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private Date date = new Date()
+    private String startTime;
+    private String endTime;
 
     public StopWatch(){
-        this.startTime =
+        this.startTime = dateFormat.format(date);
 
+    }
+    public void start(){
+        this.startTime = dateFormat.format(date);
+    }
+
+    public void stop(){
+        this.endTime = dateFormat.format(date);
     }
 }
