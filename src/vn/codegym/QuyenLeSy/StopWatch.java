@@ -5,20 +5,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class StopWatch {
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    private Date date = new Date()
-    private String startTime;
-    private String endTime;
+    private long startTime;
+    private long endTime;
 
     public StopWatch(){
-        this.startTime = dateFormat.format(date);
+        this.startTime = System.currentTimeMillis();
 
     }
     public void start(){
-        this.startTime = dateFormat.format(date);
+        this.startTime = System.currentTimeMillis();
     }
 
     public void stop(){
-        this.endTime = dateFormat.format(date);
+        this.endTime = System.currentTimeMillis();
+    }
+
+    public float  getElapsedTime(){
+        return this.endTime - this.startTime;
     }
 }
